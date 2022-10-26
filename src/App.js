@@ -5,45 +5,49 @@ import Carousel from "react-spring-3d-carousel";
 //import Card from "@material-ui/core/Card";
 import { v4 as uuidv4 } from 'uuid';
 import TniCard from "./card";
+import Image1 from '../src/assets/cards/José Eliomar.png';
+
+
 import { config } from "react-spring";
 
 const App = ()=>{
 
   const [goToSlide, setgoToSlide] = useState("");
+
   let slides = [];
   
   slides = [
     {
       key: uuidv4(),
-      content: <TniCard />
+      content: <img src={Image1} alt="4" />
     },
     {
       key: uuidv4(),
-      content: <TniCard />
+      content: <img src={Image1} alt="4" />
     },
     {
       key: uuidv4(),
-      content: <TniCard />
+      content: <img src={Image1} alt="4" />
     },
     {
       key: uuidv4(),
-      content: <TniCard />
+      content: <img src={Image1} alt="4" />
     },
     {
       key: uuidv4(),
-      content: <TniCard />
+      content: <img src={Image1} alt="4" />
     },
     {
       key: uuidv4(),
-      content: <TniCard />
+      content: <img src={Image1} alt="4" />
     },
     {
       key: uuidv4(),
-      content: <TniCard />
+      content: <img src={Image1} alt="4" />
     },
     {
       key: uuidv4(),
-      content: <TniCard />
+      content: <img src={Image1} alt="4" />
     }
   ].map((slide, index) => {
     return { ...slide, onClick: () => setgoToSlide(index) };
@@ -58,7 +62,7 @@ const App = ()=>{
         <Carousel
           slides={slides}
           goToSlide={goToSlide}
-          offsetRadius="10"
+          offsetRadius="5"
           animationConfig={config.gentle}
           showNavigation
         />
