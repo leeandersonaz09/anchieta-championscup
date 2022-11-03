@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 // import icons
 import { BsArrowLeft, BsArrowRight, } from 'react-icons/bs';
-import { useNavigate  } from "react-router-dom";
+//import { useNavigate  } from "react-router-dom";
 
 import img1 from '../../assets/cards/José Eliomar.png';
 import img2 from '../../assets/cards/Alexandre.png';
@@ -46,7 +46,7 @@ function EmptyArrow({ onClick }) {
 }
 
 const Home = () => {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const [slideIndex, setSlideIndex] = useState(0);
   const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16];
 
@@ -84,7 +84,7 @@ const Home = () => {
       }]
   };
 
-  
+ /* 
 const pushPage = (event) => {
 
   navigate({
@@ -95,7 +95,7 @@ const pushPage = (event) => {
     }
   });
 
-}
+}*/
 
   return (
     <div className="container">
@@ -108,7 +108,7 @@ const pushPage = (event) => {
             {
               images.map((img, index) => (
                 <div className={index === slideIndex ? 'slide slide-active' : 'slide'} key={index}>
-                  <img src={img} alt="" onClick={()=>pushPage(img)}/>
+                  <img src={img} alt="" onClick={()=>null}/>
                 </div>
               ))
             }
