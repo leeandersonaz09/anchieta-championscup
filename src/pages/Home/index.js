@@ -4,24 +4,7 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 // import icons
 import { BsArrowLeft, BsArrowRight, } from 'react-icons/bs';
-//import { useNavigate  } from "react-router-dom";
-
-import img1 from '../../assets/cards/José Eliomar.png';
-import img2 from '../../assets/cards/Alexandre.png';
-import img3 from '../../assets/cards/anansa.png';
-import img4 from '../../assets/cards/Fernanda.png';
-import img5 from '../../assets/cards/Jane Kelli.png';
-import img6 from '../../assets/cards/José Maurício.png';
-import img7 from '../../assets/cards/Laiz Pereira.png';
-import img8 from '../../assets/cards/Marcos Torres.png';
-import img9 from '../../assets/cards/Marilia.png';
-import img10 from '../../assets/cards/Nadia.png';
-import img11 from '../../assets/cards/Rita.png';
-import img12 from '../../assets/cards/Samanta.png';
-import img13 from '../../assets/cards/Tais.png';
-import img14 from '../../assets/cards/Vielka.png';
-import img15 from '../../assets/cards/tania.png';
-import img16 from '../../assets/cards/Tanianna.png';
+import { useNavigate } from "react-router-dom";
 
 function SampleNextArrow({ onClick }) {
   return (
@@ -46,9 +29,132 @@ function EmptyArrow({ onClick }) {
 }
 
 const Home = () => {
-  //const navigate = useNavigate();
+
+  const navigate = useNavigate();
   const [slideIndex, setSlideIndex] = useState(0);
-  const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16];
+
+    const data = [
+      {
+        key: 1,
+        img: 'https://drive.google.com/uc?export=download&id=14BAmsVeiM0r_NwIQkdgbWFMEIWhWX_o9',
+        nome:'',
+        disciplina:'',
+        descrição:''
+      },
+      {
+        key: 2,
+        img: 'https://drive.google.com/uc?export=download&id=1E4e_XpmIs5MgQesFFZgXKwTsroZen2GT',
+        nome:'',
+        disciplina:'',
+        descrição:''
+      },
+      {
+        key: 3,
+        img: 'https://drive.google.com/uc?export=download&id=1HY7JOwGvYHkUh7eR4yPfetB0vPeVarIM',
+        nome:'',
+        disciplina:'',
+        descrição:''
+      },
+      {
+        key: 4,
+        img: 'https://drive.google.com/uc?export=download&id=1PAUg742AqAkwYbOA0C69mYJBJORWzegP',
+        nome:'',
+        disciplina:'',
+        descrição:''
+      },
+      {
+        key: 5,
+        img: 'https://drive.google.com/uc?export=download&id=1R2GN3D5tmX2xFX1OfIROgDXnz4ta5Xw9',
+        nome:'',
+        disciplina:'',
+        descrição:''
+      },
+      {
+        key: 6,
+        img: 'https://drive.google.com/uc?export=download&id=1V5XTRf6awshQnYkxVck19aHOpDUzAXLR',
+        nome:'',
+        disciplina:'',
+        descrição:''
+      },
+      {
+        key: 7,
+        img: 'https://drive.google.com/uc?export=download&id=1uWtbRtEV9M77CTUxszEpCO6Vui8TGDA1',
+        nome:'',
+        disciplina:'',
+        descrição:''
+      },
+      {
+        key: 8,
+        img: 'https://drive.google.com/uc?export=download&id=1H_4CR-Bk3jLevgxTOXZRJhrdiw3iVxsI',
+        nome:'',
+        disciplina:'',
+        descrição:''
+      },
+      {
+        key: 9,
+        img: 'https://drive.google.com/uc?export=download&id=1LO7X4mnMJnYJx5sOmL-K8joU6e7TxK9z',
+        nome:'',
+        disciplina:'',
+        descrição:''
+      },
+      {
+        key: 10,
+        img: 'https://drive.google.com/uc?export=download&id=1ZanZNBzDJEpqj6tXxfLFhnQilYquceaJ',
+        nome:'',
+        disciplina:'',
+        descrição:''
+      },
+      {
+        key: 11,
+        img: 'https://drive.google.com/uc?export=download&id=1_n-Cq_R5VfTgl3sharS-AUMaZ9fEl2SY',
+        nome:'',
+        disciplina:'',
+        descrição:''
+      },
+      {
+        key: 12,
+        img: 'https://drive.google.com/uc?export=download&id=1iFa_P3SaNkhHcARHGBQgCmV-Rll0Y_pX',
+        nome:'',
+        disciplina:'',
+        descrição:''
+      },
+      {
+        key: 13,
+        img: 'https://drive.google.com/uc?export=download&id=1jFVuzjZhhV2T-QzFWtfWV2ArBQPXEt-Z',
+        nome:'',
+        disciplina:'',
+        descrição:''
+      },
+      {
+        key: 14,
+        img: 'https://drive.google.com/uc?export=download&id=12vYLMb3x8yQh2pmXtU-XEirDoIulw_nH',
+        nome:'',
+        disciplina:'',
+        descrição:''
+      },
+      {
+        key: 15,
+        img: 'https://drive.google.com/uc?export=download&id=1VAAxx8OGioVyrs4Xo5zl-1TRPh9TZP_5',
+        nome:'Tania Chiartano',
+        disciplina:'Supervisora',
+        descrição:''
+      },
+      {
+        key: 16,
+        img: 'https://drive.google.com/uc?export=download&id=1gJreTqQqox7Qthxe188n28svM4OcM0yh',
+        nome:'Tanniana Costa',
+        disciplina:'Orientadora',
+        descrição:''
+      },
+      {
+        key: 17,
+        img: 'https://drive.google.com/uc?export=download&id=10KXfibF6ZWRCqq6npcxUISJH7bbCdq1d',
+        nome:'Marisol Melo',
+        disciplina:'Auxiliar de Supervisão',
+        descrição:''
+      },
+
+    ]
 
   const settings = {
     dots: true,
@@ -84,18 +190,18 @@ const Home = () => {
       }]
   };
 
- /* 
-const pushPage = (event) => {
 
-  navigate({
-    pathname: '/Details',
-    search: '?query=abc',
-    state: {
-      image: event,
-    }
-  });
+  const pushPage = (event) => {
+   
+    navigate({
+      pathname: '/Details',
+      search: '?query=abc',
+      state: {
+        image: event,
+      }
+    });
 
-}*/
+  }
 
   return (
     <div className="container">
@@ -106,9 +212,9 @@ const pushPage = (event) => {
         <div className="slider">
           <Slider {...settings}>
             {
-              images.map((img, index) => (
-                <div className={index === slideIndex ? 'slide slide-active' : 'slide'} key={index}>
-                  <img src={img} alt="" onClick={()=>null}/>
+              data.map((item, index) => (
+                <div className={index === slideIndex ? 'slide slide-active' : 'slide'} key={item.key}>
+                  <img src={item.img} alt="" onClick={() => pushPage(item.img)} />
                 </div>
               ))
             }
