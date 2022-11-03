@@ -1,18 +1,20 @@
 import './index.css';
-import React, { useState, useEffect } from 'react';
-import logo from '../../assets/logo.svg';
-import { useLocation, useNavigate  } from "react-router-dom";
+//import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+//import logo from '../../assets/logo.svg';
+//import { useLocation, useNavigate  } from "react-router-dom";
+import { useLocation  } from "react-router-dom";
 
 const Details = () => {
   
-  const [img, setImg] = useState();
+  //const [img, setImg] = useState();
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
 
-    setImg(location.state.image);
+    //setImg(location.state.image);
 
   }, [location]);
 
