@@ -3,7 +3,8 @@ import logo from '../../assets/logo.svg';
 import React, { useState } from "react";
 import Slider from "react-slick";
 // import icons
-import {BsArrowLeft, BsArrowRight,} from 'react-icons/bs';
+import { BsArrowLeft, BsArrowRight, } from 'react-icons/bs';
+import { useNavigate  } from "react-router-dom";
 
 import img1 from '../../assets/cards/José Eliomar.png';
 import img2 from '../../assets/cards/Alexandre.png';
@@ -22,32 +23,32 @@ import img14 from '../../assets/cards/Vielka.png';
 import img15 from '../../assets/cards/tania.png';
 import img16 from '../../assets/cards/Tanianna.png';
 
-import { config } from "react-spring";
-
-function SampleNextArrow({onClick}) {
+function SampleNextArrow({ onClick }) {
   return (
     <div className='arrow arrow-right' onClick={onClick}>
-      <BsArrowRight/>
+      <BsArrowRight />
     </div>
   );
 }
-function SamplePrevArrow({onClick}) {
+
+function SamplePrevArrow({ onClick }) {
   return (
     <div className='arrow arrow-left' onClick={onClick}>
-      <BsArrowLeft/>
+      <BsArrowLeft />
     </div>
   );
 }
-function EmptyArrow({onClick}) {
+
+function EmptyArrow({ onClick }) {
   return (
     <div></div>
   );
 }
 
-const Home = ()=>{
-
+const Home = () => {
+  const navigate = useNavigate();
   const [slideIndex, setSlideIndex] = useState(0);
-  const images = [img1,img2,img3,img4,img5,img6,img7,img8,img9,img10];
+  const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16];
 
   const settings = {
     dots: true,
@@ -56,8 +57,8 @@ const Home = ()=>{
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000,
-    beforeChange: (current, next)=>setSlideIndex(next),
+    autoplaySpeed: 2000,
+    beforeChange: (current, next) => setSlideIndex(next),
     centerMode: true,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
@@ -83,22 +84,36 @@ const Home = ()=>{
       }]
   };
 
+  
+const pushPage = (event) => {
+
+  navigate({
+    pathname: '/Details',
+    search: '?query=abc',
+    state: {
+      image: event,
+    }
+  });
+
+}
+
   return (
     <div className="container">
-      <header>
-        <img src={logo} alt="Logo do Anchieta 40 anos" />
-      </header>
-      <div className="slider">
-        <Slider {...settings}>
-          {
-            images.map((img, index)=>(
-              <div className={index === slideIndex ? 'slide slide-active' : 'slide'} key={index}>
-                <img src={img} alt=""/>
-              </div>
-            ))
-          }
-        </Slider>
-        
+      <div className='content'>
+        <header>
+          <img src={logo} alt="Logo do Anchieta 40 anos" />
+        </header>
+        <div className="slider">
+          <Slider {...settings}>
+            {
+              images.map((img, index) => (
+                <div className={index === slideIndex ? 'slide slide-active' : 'slide'} key={index}>
+                  <img src={img} alt="" onClick={()=>pushPage(img)}/>
+                </div>
+              ))
+            }
+          </Slider>
+        </div>
       </div>
     </div>
   );
