@@ -192,14 +192,13 @@ const Home = () => {
 
 
   const pushPage = (event) => {
-   
-    navigate({
-      pathname: '/Details',
+ 
+    navigate('/Details', {
       search: '?query=abc',
       state: {
         image: event,
-      }
-    });
+      } 
+    })
 
   }
 
