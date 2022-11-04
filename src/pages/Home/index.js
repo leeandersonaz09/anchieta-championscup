@@ -37,99 +37,99 @@ const Home = () => {
       {
         key: 1,
         img: 'https://drive.google.com/uc?export=download&id=14BAmsVeiM0r_NwIQkdgbWFMEIWhWX_o9',
-        nome:'',
-        disciplina:'',
+        nome:'Anansa Campos',
+        disciplina:'Educação Física',
         descrição:''
       },
       {
         key: 2,
         img: 'https://drive.google.com/uc?export=download&id=1E4e_XpmIs5MgQesFFZgXKwTsroZen2GT',
-        nome:'',
-        disciplina:'',
+        nome:'José Maurício',
+        disciplina:'Língua Inglesa',
         descrição:''
       },
       {
         key: 3,
         img: 'https://drive.google.com/uc?export=download&id=1HY7JOwGvYHkUh7eR4yPfetB0vPeVarIM',
-        nome:'',
-        disciplina:'',
+        nome:'Fernanda Bispo',
+        disciplina:'História',
         descrição:''
       },
       {
         key: 4,
         img: 'https://drive.google.com/uc?export=download&id=1PAUg742AqAkwYbOA0C69mYJBJORWzegP',
-        nome:'',
-        disciplina:'',
+        nome:'Jane Kelli',
+        disciplina:'Língua Portuguesa',
         descrição:''
       },
       {
         key: 5,
         img: 'https://drive.google.com/uc?export=download&id=1R2GN3D5tmX2xFX1OfIROgDXnz4ta5Xw9',
-        nome:'',
-        disciplina:'',
+        nome:'Laiz Pereira',
+        disciplina:'Língua Portuguesa',
         descrição:''
       },
       {
         key: 6,
         img: 'https://drive.google.com/uc?export=download&id=1V5XTRf6awshQnYkxVck19aHOpDUzAXLR',
-        nome:'',
-        disciplina:'',
+        nome:'Marcos Torres',
+        disciplina:'Ciências',
         descrição:''
       },
       {
         key: 7,
         img: 'https://drive.google.com/uc?export=download&id=1uWtbRtEV9M77CTUxszEpCO6Vui8TGDA1',
-        nome:'',
-        disciplina:'',
+        nome:'Alexandre Silva',
+        disciplina:'Ciências',
         descrição:''
       },
       {
         key: 8,
         img: 'https://drive.google.com/uc?export=download&id=1H_4CR-Bk3jLevgxTOXZRJhrdiw3iVxsI',
-        nome:'',
-        disciplina:'',
+        nome:'Vielka Vidal',
+        disciplina:'Língua Inglesa',
         descrição:''
       },
       {
         key: 9,
         img: 'https://drive.google.com/uc?export=download&id=1LO7X4mnMJnYJx5sOmL-K8joU6e7TxK9z',
-        nome:'',
-        disciplina:'',
+        nome:'Marília Suarez',
+        disciplina:'Redação',
         descrição:''
       },
       {
         key: 10,
         img: 'https://drive.google.com/uc?export=download&id=1ZanZNBzDJEpqj6tXxfLFhnQilYquceaJ',
-        nome:'',
-        disciplina:'',
+        nome:'Samanta Santos',
+        disciplina:'Matemática',
         descrição:''
       },
       {
         key: 11,
         img: 'https://drive.google.com/uc?export=download&id=1_n-Cq_R5VfTgl3sharS-AUMaZ9fEl2SY',
-        nome:'',
-        disciplina:'',
+        nome:'Rita Fragoso',
+        disciplina:'Matemática',
         descrição:''
       },
       {
         key: 12,
         img: 'https://drive.google.com/uc?export=download&id=1iFa_P3SaNkhHcARHGBQgCmV-Rll0Y_pX',
-        nome:'',
-        disciplina:'',
+        nome:'Tais Plech',
+        disciplina:'Ciências',
         descrição:''
       },
       {
         key: 13,
         img: 'https://drive.google.com/uc?export=download&id=1jFVuzjZhhV2T-QzFWtfWV2ArBQPXEt-Z',
-        nome:'',
-        disciplina:'',
+        nome:'Nádia Lima',
+        disciplina:'Artes',
         descrição:''
       },
       {
         key: 14,
         img: 'https://drive.google.com/uc?export=download&id=12vYLMb3x8yQh2pmXtU-XEirDoIulw_nH',
-        nome:'',
-        disciplina:'',
+        nome:'José Eliomar',
+        disciplina:'Geografia',
         descrição:''
       },
       {
@@ -192,11 +192,11 @@ const Home = () => {
 
 
   const pushPage = (event) => {
- 
+    
     navigate('/Details', {
       search: '?query=abc',
       state: {
-        image: event,
+        data: event
       } 
     })
 
@@ -213,7 +213,7 @@ const Home = () => {
             {
               data.map((item, index) => (
                 <div className={index === slideIndex ? 'slide slide-active' : 'slide'} key={item.key}>
-                  <img src={item.img} alt="" onClick={() => pushPage(item.img)} />
+                  <img src={item.img} alt="" onClick={() => pushPage(item)} />
                 </div>
               ))
             }
