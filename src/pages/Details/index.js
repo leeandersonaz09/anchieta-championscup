@@ -1,8 +1,8 @@
 import './index.css';
 import React, { useState, useEffect } from 'react';
 import logo from '../../assets/logo.svg';
-//import { useLocation, useNavigate  } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate  } from "react-router-dom";
+
 
 const Details = () => {
 
@@ -11,7 +11,7 @@ const Details = () => {
   const [disciplina, setDisciplina] = useState('');
   const [descricao, setDescricao] = useState('');
 
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
@@ -31,11 +31,11 @@ const Details = () => {
   }, [location]);
 
   console.log(name)
-  /*
+
   const pushPage = () => {
     navigate("/");
   }
-*/
+
 
   return (
     <div className="container">
@@ -43,14 +43,19 @@ const Details = () => {
         <header>
           <img src={logo} alt="Logo do Anchieta 40 anos" />
         </header>
+        <div>
+          <button className="button" type="button" onClick={pushPage}>
+            Voltar para Início
+          </button>
+        </div>
         <div className='name'>
           <h1>
-          {name}
+            {name}
           </h1>
-          </div>
+        </div>
         <div className='disciplina'>
           <h3>
-          {disciplina}
+            {disciplina}
           </h3>
         </div>
         <div className='image-container'>
@@ -61,7 +66,7 @@ const Details = () => {
           <div className='about'>
             {descricao}
           </div>
-         
+
         </div>
       </div>
     </div>
